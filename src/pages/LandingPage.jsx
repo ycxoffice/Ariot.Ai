@@ -10,6 +10,7 @@ import {
   X,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ARIOTLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,9 +46,9 @@ const ARIOTLanding = () => {
               <button className="text-sm hover:text-cyan-400 transition-colors">
                 Database
               </button>
-              <button className="text-sm hover:text-cyan-400 transition-colors">
+              <Link to={'/CompanyList'} className="text-sm hover:text-cyan-400 transition-colors">
                 Companies
-              </button>
+              </Link>
               <button className="text-sm hover:text-cyan-400 transition-colors">
                 Analytics
               </button>
