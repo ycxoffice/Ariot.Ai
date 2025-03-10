@@ -40,54 +40,10 @@ const ARIOTLanding = () => {
                 ARIOT<span className="text-cyan-400">.ai</span>
               </span>
             </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <button className="text-sm hover:text-cyan-400 transition-colors">
-                Database
-              </button>
-              <Link to={'/CompanyList'} className="text-sm hover:text-cyan-400 transition-colors">
-                Companies
-              </Link>
-              <button className="text-sm hover:text-cyan-400 transition-colors">
-                Analytics
-              </button>
-              <button className="bg-cyan-500 hover:bg-cyan-600 px-4 py-2 rounded-lg transition-colors">
-                Start Search
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        <div
-          className={`md:hidden transition-all duration-300 ${
-            isMenuOpen ? "h-48" : "h-0"
-          } overflow-hidden bg-black/90`}
-        >
-          <div className="container mx-auto px-4 py-4 space-y-4">
-            <button className="block w-full text-left py-2 hover:text-cyan-400 transition-colors">
-              Database
-            </button>
-            <button className="block w-full text-left py-2 hover:text-cyan-400 transition-colors">
-              Companies
-            </button>
-            <button className="block w-full text-left py-2 hover:text-cyan-400 transition-colors">
-              Analytics
-            </button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="relative z-10 pt-20 pb-32">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -97,29 +53,9 @@ const ARIOTLanding = () => {
                 AR & IoT Innovation
               </span>
             </h1>
-            <p className="text-xl text-gray-400 mb-12">
-              The most comprehensive database of Augmented Reality and IoT
-              companies, technologies, and applications
-            </p>
-
-            {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto mb-12">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg blur opacity-50"></div>
-              <div className="relative bg-black/60 backdrop-blur-xl rounded-lg flex items-center p-2">
-                <Search className="w-6 h-6 text-gray-400 ml-2" />
-                <input
-                  type="text"
-                  placeholder="Search companies, technologies, or industries..."
-                  className="w-full bg-transparent border-0 focus:ring-0 text-white px-4 py-2"
-                />
-                <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">
-                  Search
-                </button>
-              </div>
-            </div>
 
             {/* Category Pills */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
               {categories.map((category) => (
                 <button
                   key={category.id}
@@ -134,6 +70,31 @@ const ARIOTLanding = () => {
                 </button>
               ))}
             </div>
+
+            {/* Explore Company Database Button */}
+            <Link to="/CompanyList">
+              <button className="inline-flex items-center px-8 py-3 mb-12 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transform hover:-translate-y-1">
+                <span>Explore Company Database</span>
+                <svg
+                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </button>
+            </Link>
+
+            <p className="text-xl text-gray-400 mb-12">
+              The most comprehensive database of Augmented Reality and IoT
+              companies, technologies, and applications
+            </p>
           </div>
         </div>
       </section>
@@ -248,10 +209,6 @@ const ARIOTLanding = () => {
             Get instant access to comprehensive data about AR and IoT companies
             worldwide
           </p>
-          <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-3 rounded-lg hover:opacity-90 transition-opacity inline-flex items-center gap-2">
-            Start Exploring
-            <ArrowRight className="w-5 h-5" />
-          </button>
         </div>
       </section>
     </div>
